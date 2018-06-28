@@ -55,7 +55,7 @@ CPAchecker не понимает `asm goto`, а CIF не избавляется 
 
 ### Запуск CPAchecker
 
-Команда запуска: `python3 scripts/null-deref/run.py <path to cpachecker> <path to workdir/cif> annotations workdir`.
+Команда запуска: `python3 scripts/null-deref/run.py <path to cpachecker dir> <path to workdir/cif> plan.json annotations workdir`.
 
 В `annotations` по мере работы складываются аннотации во внутреннем формате (по файлу на функцию).
 
@@ -69,7 +69,7 @@ CPAchecker не понимает `asm goto`, а CIF не избавляется 
 
 ### Сбор аннотаций и генерация аспектов
 
-1. `python3 scripts/null-deref/collect.py plan.py annotations annotations.json` собирает все аннотации в один JSON файл.
+1. `python3 scripts/null-deref/collect.py plan.json annotations annotations.json` собирает все аннотации в один JSON файл.
 2. `python3 scripts/null-deref/aspects.py <path to km.json> annotations.json null_deref_assert.aspect`.
 
 ### Использование в Klever
